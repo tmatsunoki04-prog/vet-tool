@@ -287,19 +287,41 @@ ${APP_STATE.details}
     document.getElementById('copy-btn').addEventListener('click', async () => {
         try {
             await navigator.clipboard.writeText(outputReport.value);
-            showCopyFeedback();
+            showToast('クリップボードにコピーしました');
         } catch (err) {
             outputReport.select();
             document.execCommand('copy');
-            showCopyFeedback();
+            showToast('クリップボードにコピーしました');
         }
     });
 
-    function showCopyFeedback() {
-        const fb = document.getElementById('copy-feedback');
-        fb.classList.remove('hidden');
-        setTimeout(() => fb.classList.add('hidden'), 3500);
+    // --- Toast UI ---
+    let toastTimeout;
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        if (!toast) return;
+        toast.textContent = message;
+        toast.classList.add('show');
+
+        clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000); // Hide after 2 seconds
     }
+
+    // --- X Share (Dynamic URL) ---
+    document.getElementById('share-x-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        const baseUrl = "https://twitter.com/intent/tweet";
+        const text = encodeURIComponent("ペットの症状整理ツールで受診用メモを作りました。");
+        const urlToShare = encodeURIComponent(location.origin + location.pathname);
+        const hashtags = encodeURIComponent("犬,猫,動物病院");
+
+        const finalUrl = `${baseUrl}?text=${text}&url=${urlToShare}&hashtags=${hashtags}`;
+
+        window.open(finalUrl, '_blank', 'noopener,noreferrer');
+        showToast('Xの投稿画面を開きました');
+    });
 
     document.getElementById('restart-btn').addEventListener('click', () => {
         // Reset State

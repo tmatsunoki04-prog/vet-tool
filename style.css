@@ -299,6 +299,16 @@ textarea:focus {
     background-color: #cbd5e1;
 }
 
+.btn-x {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-x:hover {
+    background-color: #333333;
+}
+
 /* -----------------------------
    Context Summary Box
    ----------------------------- */
@@ -584,6 +594,34 @@ textarea:focus {
 
 .hidden {
     display: none !important;
+}
+
+/* -----------------------------
+   Toast Notification
+   ----------------------------- */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease, visibility 0.3s;
+    pointer-events: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .report-container {

@@ -361,15 +361,11 @@
                             <use href="#icon-copy"></use>
                         </svg> クリップボードにコピー
                     </button>
-                    <a id="share-x-btn"
-                        href="https://twitter.com/intent/tweet?text=ペットの症状整理ツールで受診用メモを作りました。&url=https://YOUR-PRODUCTION-DOMAIN.com/"
-                        target="_blank" rel="noopener" class="btn-secondary"
-                        style="margin-top:10px;display:inline-block;">
+                    <button type="button" class="btn-primary btn-x" id="share-x-btn" style="margin-top:10px;">
                         Xで共有
-                    </a>
+                    </button>
                 </div>
             </div>
-            <div id="copy-feedback" class="feedback-msg hidden">コピーしました！✨</div>
         </section>
 
         <!-- E-E-A-T Footer Credit -->
@@ -382,6 +378,7 @@
         </div>
 
     </div>
+    <div id="toast" class="toast" aria-live="polite"></div>
     <script src="script.js"></script>
 </body>
 
