@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動物病院に行く前に伝えるべきこと｜ペット症状整理ツール</title>
+    <meta name="description" content="ペットの体調が悪いとき、動物病院で診察をスムーズにするために整理しておくべき情報を解説。症状をまとめる無料ツールも利用できます。">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific overrides for static landing page readability */
+        .landing-card {
+            margin-bottom: 40px;
+        }
+
+        .landing-section {
+            margin-bottom: 25px;
+        }
+
+        .cta-section {
+            background-color: rgba(91, 143, 185, 0.1);
+            border: 2px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cta-desc {
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .faq-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-q {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .faq-a {
+            color: var(--text-main);
+            display: flex;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .h2-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .landing-header {
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            color: var(--text-muted);
+        }
+    </style>
+    <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "動物病院に行くとき何を伝えればいい？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "症状、いつから、食欲や元気、排泄の変化などを整理すると診察がスムーズになります。"
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "このツールは診断をしますか？",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "いいえ。本ツールは症状整理を目的としており診断は行いません。"
+   }
+  }
+ ]
+}
+</script>
+</head>
+
+<body>
+    <div class="app-container">
+        <div class="landing-header">
+            ペット受診サポート
+        </div>
+
+        <div class="card-deck" style="padding-top: 0;">
+            <div class="card active-card landing-card">
+                <h1 class="question" style="font-size: 1.5rem; text-align: left; line-height: 1.4;">
+                    動物病院に行く前に整理しておきたい5つの情報</h1>
+
+                <p class="instruction" style="text-align: left;">ペットの体調が悪いとき、動物病院で診察をスムーズにするために整理しておくべき情報を解説します。</p>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">1. 症状</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">吐く、下痢、元気がないなど主な症状</p>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">2. いつから</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">数時間前か数日前か</p>
+                </div>
+
+                <!-- CTA 1 (本文途中) -->
+                <div class="cta-section">
+                    <h2 class="cta-title">症状を整理するツール</h2>
+                    <p class="cta-desc">以下のツールを使うと、症状を整理した受診用レポートを作成できます。</p>
+                    <a href="index.html?mc=元気" style="text-decoration: none;">
+                        <button class="btn-primary"
+                            style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
+                    </a>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">3. 元気と食欲</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">普段との違い</p>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">4. 排泄</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">尿や便の変化</p>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">5. その他</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">体重、既往歴、普段との違い</p>
+                </div>
+
+                <h2 class="h2-title">よくあるご質問（FAQ）</h2>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>Q1.</span>
+                        <span>動物病院に行くとき何を伝えればいい？</span>
+                    </div>
+                    <div class="faq-a">
+                        <span>A.</span>
+                        <span>症状、いつから、食欲や元気、排泄の変化などを整理すると診察がスムーズになります。</span>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-q">
+                        <span>Q2.</span>
+                        <span>このツールは診断をしますか？</span>
+                    </div>
+                    <div class="faq-a">
+                        <span>A.</span>
+                        <span>いいえ。本ツールは症状整理を目的としており診断は行いません。</span>
+                    </div>
+                </div>
+
+                <h2 class="h2-title">症状別の解説</h2>
+                <div class="related-links">
+                    <a href="dog-vomiting.html" class="related-link">犬が吐く</a>
+                    <a href="dog-diarrhea.html" class="related-link">犬の下痢</a>
+                    <a href="dog-cough.html" class="related-link">犬の咳</a>
+                    <a href="dog-no-appetite.html" class="related-link">犬の食欲不振</a>
+                    <a href="dog-urination-problem.html" class="related-link">犬の排尿異常</a>
+
+                    <a href="cat-vomiting.html" class="related-link">猫が吐く</a>
+                    <a href="cat-diarrhea.html" class="related-link">猫の下痢</a>
+                    <a href="cat-cough.html" class="related-link">猫の咳</a>
+                    <a href="cat-no-appetite.html" class="related-link">猫の食欲不振</a>
+                    <a href="cat-urination-problem.html" class="related-link">猫の排尿異常</a>
+                </div>
+
+                <div class="cta-section" style="margin-bottom: 0;">
+                    <h2 class="cta-title">症状を整理するツール</h2>
+                    <p class="cta-desc">以下のツールを使うと、症状を整理した受診用レポートを作成できます。</p>
+                    <a href="index.html?mc=元気" style="text-decoration: none;">
+                        <button class="btn-primary"
+                            style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
+                    </a>
+                </div>
+
+                <section class="author-box">
+                    <h2>作成者</h2>
+                    <p><strong>作成：</strong>獣医師</p>
+                    <p>本ツールは症状整理の補助を目的としており、診断や緊急度判定を行いません。気になる症状がある場合は動物病院へご相談ください。</p>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

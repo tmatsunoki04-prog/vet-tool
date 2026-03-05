@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>獣医師受診サポートツール</title>
+    <meta name="description" content="ペットの症状を整理して動物病院に伝えるための無料ツール。受診用レポートを自動生成できます。">
+    <link rel="canonical" href="https://YOUR-PRODUCTION-DOMAIN.com/index.html">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1"
+        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="icon-battery" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect>
+            <line x1="22" y1="11" x2="22" y2="13"></line>
+        </symbol>
+        <symbol id="icon-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </symbol>
+        <symbol id="icon-frown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M16 16s-1.5-2-4-2-4 2-4 2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </symbol>
+        <symbol id="icon-smile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </symbol>
+        <symbol id="icon-meh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="8" y1="15" x2="16" y2="15"></line>
+            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+        </symbol>
+        <symbol id="icon-wind" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2">
+            </path>
+        </symbol>
+        <symbol id="icon-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </symbol>
+        <symbol id="icon-droplet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+        </symbol>
+        <symbol id="icon-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+        </symbol>
+        <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="6" x2="12" y2="12"></line>
+            <line x1="16" y1="14" x2="12" y2="12"></line>
+        </symbol>
+        <symbol id="icon-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+        </symbol>
+        <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </symbol>
+        <symbol id="icon-mars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="10" cy="14" r="5"></circle>
+            <line x1="13.5" y1="10.5" x2="19" y2="5"></line>
+            <line x1="15" y1="5" x2="19" y2="5"></line>
+            <line x1="19" y1="9" x2="19" y2="5"></line>
+        </symbol>
+        <symbol id="icon-venus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="10" r="5"></circle>
+            <line x1="12" y1="15" x2="12" y2="21"></line>
+            <line x1="9" y1="18" x2="15" y2="18"></line>
+        </symbol>
+        <symbol id="icon-help" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </symbol>
+        <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
+            </path>
+        </symbol>
+        <symbol id="icon-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+        </symbol>
+        <symbol id="icon-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1.5 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path>
+            <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"></path>
+        </symbol>
+    </svg>
+    <div class="app-container">
+        <!-- Floating Emergency Guide Button -->
+        <button id="emergency-modal-btn" class="emergency-fab" aria-label="緊急時ガイド">
+            <svg class="btn-icon alert-icon">
+                <use href="#icon-alert"></use>
+            </svg>
+            <span class="text">緊急時ガイド</span>
+        </button>
+
+        <!-- Emergency Guardrail Modal -->
+        <dialog id="emergency-modal" class="guardrail-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>⚠️ 緊急時の目安</h2>
+                    <button class="close-modal-btn" aria-label="閉じる">&times;</button>
+                </div>
+                <div class="modal-body static-alert">
+                    <p class="highlight">本ツールは診断を行いません。<br>入力内容から緊急度を判定しません。</p>
+                    <p>気になる症状がある場合は、直接動物病院へご相談ください。</p>
+                    <p><strong>以下の症状がある場合は、一般的に緊急性が高いことがあります。<br>該当する場合は早めに動物病院へ連絡してください。</strong></p>
+                    <ul class="emergency-checklist">
+                        <li><label><input type="checkbox"> 呼吸困難（開口呼吸、チアノーゼ等）</label></li>
+                        <li><label><input type="checkbox"> 意識混濁・呼びかけに反応しない</label></li>
+                        <li><label><input type="checkbox"> 痙攣（けいれん）が止まらない</label></li>
+                        <li><label><input type="checkbox"> 持続する出血や激しい嘔吐・下痢</label></li>
+                        <li><label><input type="checkbox"> 尿が全く出ていない（尿閉）</label></li>
+                    </ul>
+                    <p class="note">※上記のチェックリストは自己確認用です。アプリの動作には影響しません。</p>
+                </div>
+            </div>
+        </dialog>
+
+        <!-- Header Progress -->
+        <header class="app-header">
+            <button id="back-btn" class="nav-btn hidden" aria-label="戻る">◀ 戻る</button>
+            <div class="progress-indicator">
+                <span id="current-step-display">1</span> / <span id="total-steps-display">7</span>
+            </div>
+            <!-- Empty div for flex alignment -->
+            <div style="width: 70px;"></div>
+        </header>
+
+        <!-- Main Card Deck -->
+        <main class="card-deck" id="card-deck">
+
+            <!-- Card 1: 主訴 (First step: Anxiety focus, Multi-select) -->
+            <section class="card active-card" id="card-1" data-field="mainComplaint">
+                <h2 class="question">Q1. 気になる症状は？</h2>
+                <p class="instruction" style="text-align: center;">症状が複数ある場合は、気になるものをすべて選択してください</p>
+                <div class="choice-grid multi-select-group">
+                    <button class="choice-btn multi-select" data-value="元気・食欲がない"><svg class="btn-icon">
+                            <use href="#icon-battery"></use>
+                        </svg>元気・食欲がない</button>
+                    <button class="choice-btn multi-select" data-value="吐いている"><svg class="btn-icon">
+                            <use href="#icon-frown"></use>
+                        </svg>吐いている</button>
+                    <button class="choice-btn multi-select" data-value="下痢をしている"><svg class="btn-icon">
+                            <use href="#icon-alert"></use>
+                        </svg>下痢・軟便</button>
+                    <button class="choice-btn multi-select" data-value="咳・苦しそう"><svg class="btn-icon">
+                            <use href="#icon-wind"></use>
+                        </svg>咳・呼吸が苦しそう</button>
+                    <button class="choice-btn multi-select" data-value="痛がる・歩き方が変"><svg class="btn-icon">
+                            <use href="#icon-activity"></use>
+                        </svg>痛がる・歩き方が変</button>
+                    <button class="choice-btn multi-select" data-value="皮膚・耳の異常"><svg class="btn-icon">
+                            <use href="#icon-search"></use>
+                        </svg>皮膚・耳が赤い/痒い</button>
+                    <button class="choice-btn multi-select" data-value="排尿の異常"><svg class="btn-icon">
+                            <use href="#icon-droplet"></use>
+                        </svg>おしっこの異常</button>
+                    <button class="choice-btn multi-select" data-value="その他"><svg class="btn-icon">
+                            <use href="#icon-edit"></use>
+                        </svg>その他（自由入力）</button>
+                </div>
+                <div id="other-symptom-container" class="hidden" style="margin-top: 15px;">
+                    <input type="text" id="other-symptom-input" placeholder="具体的な症状を入力（例: 痙攣しているなど）"
+                        class="custom-input">
+                </div>
+                <button type="button" class="btn-primary" id="btn-card1-next" style="margin-top: 20px;">次へ進む</button>
+            </section>
+
+            <!-- Card 2: いつから？ -->
+            <section class="card hidden-card" id="card-2" data-field="symptomStart">
+                <h2 class="question">Q2. 症状はいつからですか？</h2>
+                <div class="choice-fluid">
+                    <button class="choice-btn" data-value="数時間前から"><svg class="btn-icon">
+                            <use href="#icon-clock"></use>
+                        </svg>数時間前から</button>
+                    <button class="choice-btn" data-value="今日の朝から"><svg class="btn-icon">
+                            <use href="#icon-clock"></use>
+                        </svg>今日の朝から</button>
+                    <button class="choice-btn" data-value="きのうから"><svg class="btn-icon">
+                            <use href="#icon-calendar"></use>
+                        </svg>きのうから</button>
+                    <button class="choice-btn" data-value="2〜3日前から"><svg class="btn-icon">
+                            <use href="#icon-calendar"></use>
+                        </svg>2〜3日前から</button>
+                    <button class="choice-btn" data-value="1週間以上前から"><svg class="btn-icon">
+                            <use href="#icon-calendar"></use>
+                        </svg>1週間以上前から</button>
+                    <button class="choice-btn" data-value="ずっと前から（慢性）"><svg class="btn-icon">
+                            <use href="#icon-refresh"></use>
+                        </svg>ずっと前から（慢性）</button>
+                </div>
+            </section>
+
+            <!-- Card 3: 元気・食欲 -->
+            <section class="card hidden-card" id="card-3" data-field="energyAppetite">
+                <h2 class="question">Q3. 元気と食欲はどうですか？</h2>
+                <div class="choice-fluid">
+                    <button class="choice-btn" data-value="元気も食欲もある"><svg class="btn-icon">
+                            <use href="#icon-smile"></use>
+                        </svg>どちらもいつも通り</button>
+                    <button class="choice-btn" data-value="少し落ちているが、食べる・動く"><svg class="btn-icon">
+                            <use href="#icon-meh"></use>
+                        </svg>少し落ちている</button>
+                    <button class="choice-btn" data-value="ぐったりして全く食べない"><svg class="btn-icon">
+                            <use href="#icon-frown"></use>
+                        </svg>ぐったりして食べない</button>
+                    <button class="choice-btn" data-value="食べるが元気がない"><svg class="btn-icon">
+                            <use href="#icon-meh"></use>
+                        </svg>食べるが、動かない</button>
+                    <button class="choice-btn" data-value="元気だが食べない"><svg class="btn-icon">
+                            <use href="#icon-meh"></use>
+                        </svg>元気だが、食べない</button>
+                </div>
+            </section>
+
+            <!-- Card 4: 種別 (Moved to later) -->
+            <section class="card hidden-card" id="card-4" data-field="petType">
+                <h2 class="question">Q4. ペットの種類を教えてください</h2>
+                <div class="choice-fluid">
+                    <button class="choice-btn" data-value="犬"><svg class="btn-icon">
+                            <use href="#icon-heart"></use>
+                        </svg>犬</button>
+                    <button class="choice-btn" data-value="猫"><svg class="btn-icon">
+                            <use href="#icon-heart"></use>
+                        </svg>猫</button>
+                    <button class="choice-btn" data-value="ウサギ"><svg class="btn-icon">
+                            <use href="#icon-heart"></use>
+                        </svg>ウサギ</button>
+                    <button class="choice-btn" data-value="鳥類"><svg class="btn-icon">
+                            <use href="#icon-heart"></use>
+                        </svg>鳥類</button>
+                    <button class="choice-btn" data-value="小動物"><svg class="btn-icon">
+                            <use href="#icon-heart"></use>
+                        </svg>小動物・その他</button>
+                </div>
+            </section>
+
+            <!-- Card 5: 年齢・性別 -->
+            <section class="card hidden-card" id="card-5" data-field="petGenderAge">
+                <h2 class="question">Q5. 性別を教えてください</h2>
+                <div class="choice-grid">
+                    <button class="choice-btn" data-value="オス（未去勢）"><svg class="btn-icon">
+                            <use href="#icon-mars"></use>
+                        </svg>オス（未去勢）</button>
+                    <button class="choice-btn" data-value="オス（去勢済）"><svg class="btn-icon">
+                            <use href="#icon-mars"></use>
+                        </svg>オス（去勢済）</button>
+                    <button class="choice-btn" data-value="メス（未避妊）"><svg class="btn-icon">
+                            <use href="#icon-venus"></use>
+                        </svg>メス（未避妊）</button>
+                    <button class="choice-btn" data-value="メス（避妊済）"><svg class="btn-icon">
+                            <use href="#icon-venus"></use>
+                        </svg>メス（避妊済）</button>
+                    <button class="choice-btn" data-value="不明"><svg class="btn-icon">
+                            <use href="#icon-help"></use>
+                        </svg>不明</button>
+                </div>
+            </section>
+
+            <!-- Card 6: 自由記述 -->
+            <section class="card hidden-card" id="card-6" data-field="details">
+                <h2 class="question">Q6. 詳細を教えてください（任意）</h2>
+
+                <!-- NEW: Context Summary Box -->
+                <div class="context-summary" id="context-summary-box">
+                    <p class="context-title">これまでの回答</p>
+                    <ul id="context-list"></ul>
+                </div>
+
+                <p class="instruction">ご自身が見た「普段との違い」など、ご自由にお書きください。体重や既往歴があればここにお願いします。</p>
+                <div class="form-group">
+                    <textarea id="free-text-details" rows="5"
+                        placeholder="例: 4.5kg。いつもは玄関までお迎えに来るのに、今日はソファから動こうとしません。"></textarea>
+                </div>
+                <!-- Proceed Button to final confirmation -->
+                <button type="button" class="btn-primary" id="btn-to-confirm">次へ進む</button>
+            </section>
+
+            <!-- Card 7: 最終確認と生成 -->
+            <section class="card hidden-card" id="card-7">
+                <h2 class="question">最終確認</h2>
+                <p class="instruction" style="text-align: center; margin-bottom: 20px;">獣医師向けのレポートを作成します。</p>
+
+                <div class="guardrail-block final-guard static-alert">
+                    <p><strong>本ツールは診断を行いません。入力内容から緊急度を判定していません。</strong></p>
+                    <p>緊急の可能性がある場合（呼吸困難、意識混濁、痙攣、持続出血、尿閉など）は、<br><strong>レポートに頼らず、すぐに動物病院へご連絡ください。</strong></p>
+                </div>
+
+                <div class="seed-summary">
+                    <p>集めた手掛かり: <span id="seed-count">0</span> コ<br>
+                        <span class="seed-icons" id="seed-icons-display"></span>
+                    </p>
+                </div>
+
+                <button type="button" class="btn-primary btn-pulse" id="generate-btn">受診用レポートを生成</button>
+            </section>
+
+        </main>
+
+        <!-- Visual Feedback Element Container -->
+        <div id="visual-feedback-layer"></div>
+
+        <!-- Progress Seeds Container -->
+        <div class="seed-tray">
+            <div class="seed-row" id="seed-row">
+                <!-- Seeds will appear here physically -->
+            </div>
+            <p class="seed-tray-label">レポートの種</p>
+        </div>
+
+        <!-- Result Section (Replaces cards on complete) -->
+        <section id="result-section" class="hidden">
+            <h2 class="result-title">レポートが完成しました</h2>
+            <p class="instruction">以下のテキストをコピーし、受付チャットやWeb問診票に貼り付けてください。</p>
+            <div class="report-container">
+                <textarea id="output-report" readonly></textarea>
+                <div class="action-buttons">
+                    <button type="button" class="btn-secondary" id="restart-btn">最初から</button>
+                    <button type="button" class="btn-primary copy-action" id="copy-btn">
+                        <svg class="btn-icon" style="color:white; margin-right:8px;">
+                            <use href="#icon-copy"></use>
+                        </svg> クリップボードにコピー
+                    </button>
+                    <a id="share-x-btn"
+                        href="https://twitter.com/intent/tweet?text=ペットの症状整理ツールで受診用メモを作りました。&url=https://YOUR-PRODUCTION-DOMAIN.com/"
+                        target="_blank" rel="noopener" class="btn-secondary"
+                        style="margin-top:10px;display:inline-block;">
+                        Xで共有
+                    </a>
+                </div>
+            </div>
+            <div id="copy-feedback" class="feedback-msg hidden">コピーしました！✨</div>
+        </section>
+
+        <!-- E-E-A-T Footer Credit -->
+        <div
+            style="margin-top: 40px; margin-bottom: 20px; font-size: 0.85rem; color: var(--text-muted); text-align: center; line-height: 1.6;">
+            <p style="margin: 0;"><strong>作成：</strong>獣医師</p>
+            <p style="margin: 0;">本ツールは症状整理の補助を目的としており、診断や緊急度判定を行いません。<br>気になる症状がある場合は動物病院へご相談ください。</p>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

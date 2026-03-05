@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猫の下痢｜受診前チェック（便の状態・回数・元気）</title>
+    <meta name="description" content="猫の下痢で動物病院へ行く前に整理。便の状態、回数、食事変更、嘔吐の有無、元気などをまとめて受診時に伝える症状レポートを作成できます。">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .landing-card { margin-bottom: 40px; }
+        .landing-section { margin-bottom: 25px; }
+        .cta-section { background-color: rgba(91, 143, 185, 0.1); border: 2px solid var(--primary-color); padding: 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
+        .cta-title { color: var(--primary-color); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
+        .cta-desc { margin-bottom: 15px; color: var(--text-main); font-size: 0.95rem; }
+        .faq-item { background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border-color); }
+        .faq-q { font-weight: bold; color: var(--primary-color); margin-bottom: 8px; display: flex; gap: 8px; }
+        .faq-a { color: var(--text-main); display: flex; gap: 8px; line-height: 1.5; }
+        .h2-title { font-size: 1.3rem; color: var(--text-main); margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
+        .landing-header { text-align: center; padding: 20px; font-weight: bold; color: var(--text-muted); }
+        .related-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        .related-link { padding: 8px 16px; background: #fff; border: 1px solid var(--border-color); border-radius: 20px; color: var(--primary-color); text-decoration: none; font-size: 0.9rem; }
+        .related-link:hover { background: #f0f4f8; }
+    </style>
+    <script type="application/ld+json">
+    {
+     "@context":"https://schema.org",
+     "@type":"Article",
+     "author":{
+      "@type":"Person",
+      "jobTitle":"Veterinarian",
+      "description":"獣医師"
+     }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+     "@context": "https://schema.org",
+     "@type": "FAQPage",
+     "mainEntity": [
+      {
+       "@type": "Question",
+       "name": "この症状はすぐ病院に行くべき？",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "症状の強さや持続時間によって異なります。気になる場合は早めに動物病院に相談してください。"
+       }
+      },
+      {
+       "@type": "Question",
+       "name": "このツールは診断をしますか？",
+       "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "診断ではなく症状整理を目的としたツールです。"
+       }
+      }
+     ]
+    }
+    </script>
+</head>
+<body>
+    <div class="app-container">
+        <div class="landing-header">
+            ペット受診サポート
+        </div>
+        
+        <div class="card-deck" style="padding-top: 0;">
+            <div class="card active-card landing-card">
+                <h1 class="question" style="font-size: 1.5rem; text-align: left; line-height: 1.4;">猫が下痢のときに整理しておきたい情報</h1>
+                
+                <p class="instruction" style="text-align: left;">猫が下痢のとき、ご家族としては非常に心配になるかと思います。ここでは、考えられる原因と、獣医師に的確に状況を伝えるためのチェックポイントを解説します。</p>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">1. 下痢の概要</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">猫の下痢は、便がゆるい状態から水のような状態まで様々です。急性の下痢は体力を激しく消耗させることがあります。</p>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">2. よくある原因</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">消化不良、食事の変更、寄生虫、ストレス、ウイルス感染、内臓疾患など。</p>
+                </div>
+
+                <!-- CTA 1 (本文途中) -->
+                <div class="cta-section">
+                    <h2 class="cta-title">症状を整理するツール</h2>
+                    <p class="cta-desc">以下のツールで症状を整理した受診用レポートを作成できます。</p>
+                    <a href="index.html?mc=%E4%B8%8B%E7%97%A2" style="text-decoration: none;">
+                        <button class="btn-primary" style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
+                    </a>
+                </div>
+
+                <div class="landing-section">
+                    <h2 class="context-title" style="font-size: 1.1rem;">3. 動物病院に伝えるとよい情報</h2>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">下痢の回数、便の硬さ（水様、泥状など）、色、血便の有無、ゼリー状の粘液が混ざっているか。</p>
+                </div>
+
+                <h2 class="h2-title">よくあるご質問（FAQ）</h2>
+                <div class="faq-item">
+                    <div class="faq-q"><span>Q.</span><span>この症状はすぐ病院に行くべき？</span></div>
+                    <div class="faq-a"><span>A.</span><span>症状の強さや持続時間によって異なります。気になる場合は早めに動物病院に相談してください。</span></div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-q"><span>Q.</span><span>このツールは診断をしますか？</span></div>
+                    <div class="faq-a"><span>A.</span><span>診断ではなく症状整理を目的としたツールです。</span></div>
+                </div>
+
+                <h2 class="h2-title">関連症状</h2>
+                <div class="related-links">
+                    <a href="cat-vomiting.html" class="related-link">吐く</a>
+                    <a href="cat-no-appetite.html" class="related-link">食欲不振</a>
+                    <a href="cat-cough.html" class="related-link">咳</a>
+                    <a href="cat-urination-problem.html" class="related-link">排尿異常</a>
+                </div>
+
+                <!-- CTA 2 (ページ末尾) -->
+                <div class="cta-section" style="margin-bottom: 0;">
+                    <h2 class="cta-title">症状を整理するツール</h2>
+                    <p class="cta-desc">以下のツールで症状を整理した受診用レポートを作成できます。</p>
+                    <a href="index.html?mc=%E4%B8%8B%E7%97%A2" style="text-decoration: none;">
+                        <button class="btn-primary" style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
+                    </a>
+                </div>
+
+                <section class="author-box">
+                  <h2>作成者</h2>
+                  <p><strong>作成：</strong>獣医師</p>
+                  <p>本ツールは症状整理の補助を目的としており、診断や緊急度判定を行いません。気になる症状がある場合は動物病院へご相談ください。</p>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
