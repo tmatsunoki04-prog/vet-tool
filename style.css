@@ -749,16 +749,16 @@ textarea:focus {
 }
 
 /* -----------------------------
-   Hero & Footer (Phase 32)
+   Compact Hero (Phase 35)
    ----------------------------- */
 .hero {
-    max-width: 980px;
-    margin: 10px auto 22px;
-    padding: 22px 18px 18px;
+    max-width: 920px;
+    margin: 0 auto 14px;
+    padding: 14px 18px 10px;
     background: #fff;
     border: 1px solid #e6eef6;
-    border-radius: 20px;
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
     text-align: center;
@@ -785,17 +785,17 @@ textarea:focus {
 }
 
 .hero-title {
-    font-size: 26px;
+    font-size: 24px;
     line-height: 1.25;
-    font-weight: 900;
+    font-weight: 800;
     color: #1f2a33;
-    margin: 6px 0 10px;
+    margin: 4px 0 6px;
 }
 
 .hero-lead {
     max-width: 760px;
-    margin: 0 auto 12px;
-    font-size: 15px;
+    margin: 0 auto 8px;
+    font-size: 14px;
     line-height: 1.7;
     color: #4b5b67;
 }
@@ -811,14 +811,14 @@ textarea:focus {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 240px;
-    height: 54px;
+    min-width: 220px;
+    height: 48px;
     padding: 0 20px;
-    border-radius: 14px;
+    border-radius: 12px;
     background: #5f87a6;
     color: #fff;
     text-decoration: none;
-    font-weight: 900;
+    font-weight: 800;
     box-shadow: 0 10px 22px rgba(95, 135, 166, 0.25);
     transition: filter 0.2s, transform 0.1s;
 }
@@ -836,103 +836,9 @@ textarea:focus {
     color: #6b7780;
 }
 
-/* -----------------------------
-   Hero Demo UI (Phase 33)
-   ----------------------------- */
-.hero-demo {
-    display: flex;
-    justify-content: center;
-    margin-top: 16px;
-}
-
-.demo-card {
-    width: min(760px, 100%);
-    background: #fff;
-    border: 1px solid #e8eef4;
-    border-radius: 18px;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
-    padding: 16px 16px 14px;
-    transform: rotate(-1deg);
-}
-
-.demo-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.demo-progress {
-    font-weight: 800;
-    color: #5f87a6;
-}
-
-.demo-pill {
-    font-size: 12px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: #eef5fb;
-    border: 1px solid #d7e7f6;
-    color: #2d4b63;
-    font-weight: 700;
-}
-
-.demo-q {
-    font-size: 16px;
-    font-weight: 900;
-    color: #1f2a33;
-    margin-bottom: 6px;
-}
-
-.demo-sub {
-    font-size: 12px;
-    color: #6b7780;
-    margin-bottom: 12px;
-}
-
-.demo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.demo-opt {
-    padding: 12px 12px;
-    border-radius: 14px;
-    border: 1px solid #e6eef6;
-    background: #fbfdff;
-    font-size: 13px;
-    color: #2b3a44;
-    font-weight: 700;
-}
-
-.demo-bottom {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 12px;
-}
-
-.demo-btn {
-    padding: 10px 14px;
-    border-radius: 12px;
-    background: #5f87a6;
-    color: #fff;
-    font-weight: 900;
-    font-size: 13px;
-    box-shadow: 0 10px 22px rgba(95, 135, 166, 0.22);
-}
-
 @media (max-width: 560px) {
     .hero-title {
         font-size: 22px;
-    }
-
-    .demo-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .demo-card {
-        transform: none;
     }
 }
 
