@@ -300,13 +300,23 @@ textarea:focus {
 }
 
 .btn-x {
-    background-color: #000000;
-    color: #ffffff;
+    background: #000;
+    color: #fff;
+    text-decoration: none;
     border: none;
+    cursor: pointer;
+    min-height: 52px;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-weight: 700;
 }
 
 .btn-x:hover {
-    background-color: #333333;
+    filter: brightness(1.08);
+}
+
+.btn-x:active {
+    transform: translateY(1px);
 }
 
 /* -----------------------------

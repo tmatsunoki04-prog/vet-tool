@@ -310,18 +310,28 @@ ${APP_STATE.details}
     }
 
     // --- X Share (Dynamic URL) ---
-    document.getElementById('share-x-btn').addEventListener('click', (e) => {
-        e.preventDefault();
-        const baseUrl = "https://twitter.com/intent/tweet";
-        const text = encodeURIComponent("ペットの症状整理ツールで受診用メモを作りました。");
-        const urlToShare = encodeURIComponent(location.origin + location.pathname);
-        const hashtags = encodeURIComponent("犬,猫,動物病院");
+    function buildXIntentUrl() {
+        const url = window.location.href; // ★クエリ含めてそのまま共有
+        const text = "ペットの症状整理ツールで受診用メモを作りました。";
+        const hashtags = "犬,猫,動物病院";
 
-        const finalUrl = `${baseUrl}?text=${text}&url=${urlToShare}&hashtags=${hashtags}`;
+        return "https://twitter.com/intent/tweet?text=" +
+            encodeURIComponent(text) +
+            "&url=" + encodeURIComponent(url) +
+            "&hashtags=" + encodeURIComponent(hashtags);
+    }
 
-        window.open(finalUrl, '_blank', 'noopener,noreferrer');
-        showToast('Xの投稿画面を開きました');
-    });
+    const xBtn = document.querySelector("#btnShareX");
+    if (xBtn) {
+        xBtn.addEventListener("click", () => {
+            try {
+                window.open(buildXIntentUrl(), "_blank", "noopener,noreferrer");
+                if (typeof showToast === "function") showToast("Xの投稿画面を開きました");
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    }
 
     document.getElementById('restart-btn').addEventListener('click', () => {
         // Reset State
