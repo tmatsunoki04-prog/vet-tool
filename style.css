@@ -94,7 +94,8 @@ body {
     background: var(--card-bg);
     border-radius: 16px;
     padding: 30px 20px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    /* Stronger pull */
     width: 100%;
     position: absolute;
     top: 20px;
@@ -295,28 +296,31 @@ textarea:focus {
     transform: scale(0.96);
 }
 
+.btn-secondary {
+    background: #f2f2f2;
+    border: 1px solid #d9d9d9;
+    color: var(--text-main);
+}
+
 .btn-secondary:hover {
     background-color: #cbd5e1;
 }
 
-.btn-x {
-    background: #000;
-    color: #fff;
-    text-decoration: none;
+.btn-primary {
+    background: #5f87a6;
+    color: white;
     border: none;
-    cursor: pointer;
-    min-height: 52px;
-    padding: 14px 18px;
-    border-radius: 12px;
-    font-weight: 700;
 }
 
+.btn-x {
+    background: black;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover,
 .btn-x:hover {
-    filter: brightness(1.08);
-}
-
-.btn-x:active {
-    transform: translateY(1px);
+    filter: brightness(1.05);
 }
 
 /* -----------------------------
@@ -650,19 +654,22 @@ textarea:focus {
 
 .action-buttons {
     display: flex;
-    gap: 10px;
+    gap: 16px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: 20px;
 }
 
-.action-buttons .btn-secondary {
-    flex: 1;
-}
-
-.action-buttons .btn-primary {
-    flex: 2;
+.action-buttons button {
+    height: 56px;
+    padding: 0 22px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    white-space: nowrap;
 }
 
 .feedback-msg {
@@ -736,4 +743,87 @@ textarea:focus {
         font-size: 0.9rem;
         padding: 8px 12px;
     }
+}
+
+/* -----------------------------
+   Hero & Footer (Phase 32)
+   ----------------------------- */
+.hero {
+    max-width: 920px;
+    margin: 0 auto 22px;
+    padding: 18px 18px;
+    text-align: center;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    color: #2d4b63;
+    background: #eef5fb;
+    border: 1px solid #d7e7f6;
+    margin-bottom: 12px;
+}
+
+.hero-title {
+    font-size: 26px;
+    line-height: 1.25;
+    font-weight: 800;
+    margin: 6px 0 10px;
+    color: #1f2a33;
+}
+
+.hero-lead {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #4b5b67;
+    margin: 0 0 14px;
+}
+
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    padding: 0 20px;
+    border-radius: 14px;
+    background: #5f87a6;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 800;
+    box-shadow: 0 10px 22px rgba(95, 135, 166, 0.25);
+    transition: filter 0.2s, transform 0.1s;
+}
+
+.hero-btn:hover {
+    filter: brightness(1.06);
+}
+
+.hero-btn:active {
+    transform: translateY(1px);
+}
+
+.hero-note {
+    font-size: 12px;
+    color: #6b7780;
+}
+
+.site-footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 13px;
+    color: #777;
+}
+
+.site-footer a {
+    color: #777;
+    text-decoration: none;
 }

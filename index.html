@@ -166,8 +166,25 @@
             <div style="width: 70px;"></div>
         </header>
 
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-badge">無料 / ブラウザ完結 / 保存しません</div>
+            <h1 class="hero-title">
+                ペットの症状、<br>病院でうまく説明できない問題を解決します
+            </h1>
+            <p class="hero-lead">
+                質問に答えるだけで、<strong>獣医師にそのまま見せられる受診メモ</strong>を作成します。<br>
+                ⏱ 約30秒
+            </p>
+            <div class="hero-cta">
+                <a class="hero-btn" href="#start">今すぐ作る</a>
+                <div class="hero-note">※ 入力内容はサーバーに保存しません</div>
+            </div>
+        </section>
+
         <!-- Main Card Deck -->
         <main class="card-deck" id="card-deck">
+            <div id="start"></div>
 
             <!-- Card 1: 主訴 (First step: Anxiety focus, Multi-select) -->
             <section class="card active-card" id="card-1" data-field="mainComplaint">
@@ -361,7 +378,7 @@
                             <use href="#icon-copy"></use>
                         </svg> クリップボードにコピー
                     </button>
-                    <button id="btnShareX" class="btn-primary btn-x">
+                    <button id="btnShareX" class="btn-x">
                         Xで共有
                     </button>
                 </div>
@@ -376,6 +393,11 @@
             <p style="margin: 15px 0 0 0;"><a href="symptoms.html"
                     style="color: var(--primary-color); text-decoration: underline;">症状一覧</a></p>
         </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <a href="privacy.html">プライバシーポリシー</a>
+        </footer>
 
     </div>
     <div id="toast" class="toast" aria-live="polite"></div>
