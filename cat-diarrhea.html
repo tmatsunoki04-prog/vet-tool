@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +9,95 @@
     <link rel="canonical" href="https://tmatsunoki04-prog.github.io/vet-tool/cat-diarrhea.html">
     <link rel="stylesheet" href="style.css">
     <style>
-        .landing-card { margin-bottom: 40px; }
-        .landing-section { margin-bottom: 25px; }
-        .cta-section { background-color: rgba(91, 143, 185, 0.1); border: 2px solid var(--primary-color); padding: 20px; border-radius: 12px; text-align: center; margin: 30px 0; }
-        .cta-title { color: var(--primary-color); font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; }
-        .cta-desc { margin-bottom: 15px; color: var(--text-main); font-size: 0.95rem; }
-        .faq-item { background: #f8fafc; padding: 15px; border-radius: 8px; margin-bottom: 15px; border: 1px solid var(--border-color); }
-        .faq-q { font-weight: bold; color: var(--primary-color); margin-bottom: 8px; display: flex; gap: 8px; }
-        .faq-a { color: var(--text-main); display: flex; gap: 8px; line-height: 1.5; }
-        .h2-title { font-size: 1.3rem; color: var(--text-main); margin-top: 30px; margin-bottom: 15px; border-bottom: 2px solid var(--border-color); padding-bottom: 8px; }
-        .landing-header { text-align: center; padding: 20px; font-weight: bold; color: var(--text-muted); }
-        .related-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
-        .related-link { padding: 8px 16px; background: #fff; border: 1px solid var(--border-color); border-radius: 20px; color: var(--primary-color); text-decoration: none; font-size: 0.9rem; }
-        .related-link:hover { background: #f0f4f8; }
+        .landing-card {
+            margin-bottom: 40px;
+        }
+
+        .landing-section {
+            margin-bottom: 25px;
+        }
+
+        .cta-section {
+            background-color: rgba(91, 143, 185, 0.1);
+            border: 2px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .cta-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cta-desc {
+            margin-bottom: 15px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .faq-item {
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .faq-q {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .faq-a {
+            color: var(--text-main);
+            display: flex;
+            gap: 8px;
+            line-height: 1.5;
+        }
+
+        .h2-title {
+            font-size: 1.3rem;
+            color: var(--text-main);
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .landing-header {
+            text-align: center;
+            padding: 20px;
+            font-weight: bold;
+            color: var(--text-muted);
+        }
+
+        .related-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .related-link {
+            padding: 8px 16px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .related-link:hover {
+            background: #f0f4f8;
+        }
     </style>
     <script type="application/ld+json">
     {
@@ -67,27 +144,33 @@
     }
     </script>
 </head>
+
 <body>
     <div class="app-container">
         <div class="landing-header">
             ペット受診サポート
         </div>
-        
+
         <div class="card-deck" style="padding-top: 0;">
             <div class="card active-card landing-card">
-                <h1 class="question" style="font-size: 1.5rem; text-align: left; line-height: 1.4;">猫が下痢のときに整理しておきたい情報</h1>
-                
-                <p class="instruction" style="text-align: left;">猫が下痢のとき、ご家族としては非常に心配になるかと思います。ここでは、考えられる原因と、獣医師に的確に状況を伝えるためのチェックポイントを解説します。</p>
+                <h1 class="question" style="font-size: 1.5rem; text-align: left; line-height: 1.4;">猫が下痢のときに整理しておきたい情報
+                </h1>
+
+                <p class="instruction" style="text-align: left;">
+                    猫が下痢のとき、ご家族としては非常に心配になるかと思います。ここでは、考えられる原因と、獣医師に的確に状況を伝えるためのチェックポイントを解説します。</p>
 
                 <div class="landing-section">
                     <h2 class="context-title" style="font-size: 1.1rem;">1. 下痢の概要</h2>
-                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">猫の下痢は、便がゆるい状態から水のような状態まで様々です。急性の下痢は体力を激しく消耗させることがあります。</p>
-                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0; margin-top: 15px;">下痢は『ゆるいうんち』『水っぽい便』『何度もトイレに行く』などの形で気づかれることが多い症状です。</p>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">
+                        猫の下痢は、便がゆるい状態から水のような状態まで様々です。急性の下痢は体力を激しく消耗させることがあります。</p>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0; margin-top: 15px;">
+                        猫の下痢は、飼い主からは<br>「ゆるいうんち」「水っぽい便」「何度もトイレに行く」<br>といった変化として気づかれることが多い症状です。</p>
                 </div>
 
                 <div class="landing-section">
                     <h2 class="context-title" style="font-size: 1.1rem;">2. よくある原因</h2>
-                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">消化不良、食事の変更、寄生虫、ストレス、ウイルス感染、内臓疾患など。</p>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">
+                        消化不良、食事の変更、寄生虫、ストレス、ウイルス感染、内臓疾患など。</p>
                 </div>
 
                 <!-- CTA 1 (本文途中) -->
@@ -95,28 +178,36 @@
                     <h2 class="cta-title">症状を整理するツール</h2>
                     <p class="cta-desc">以下のツールで症状を整理した受診用レポートを作成できます。</p>
                     <a href="index.html?mc=%E4%B8%8B%E7%97%A2" style="text-decoration: none;">
-                        <button class="btn-primary" style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
+                        <button class="btn-primary"
+                            style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
                     </a>
                 </div>
 
                 <div class="landing-section">
                     <h2 class="context-title" style="font-size: 1.1rem;">3. 動物病院に伝えるとよい情報</h2>
-                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">下痢の回数、便の硬さ（水様、泥状など）、色、血便の有無、ゼリー状の粘液が混ざっているか。</p>
+                    <p class="instruction" style="color: var(--text-main); margin-bottom: 0;">
+                        下痢の回数、便の硬さ（水様、泥状など）、色、血便の有無、ゼリー状の粘液が混ざっているか。</p>
                 </div>
 
-                <div class="landing-section" style="background-color: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 30px;">
-    <p class="instruction" style="margin-bottom: 10px; color: var(--text-main); font-size: 0.95rem;">このページは、動物病院での診察時に症状を整理して伝えやすくすることを目的として作成されています。</p>
-    <p class="instruction" style="margin-bottom: 0; color: var(--text-main); font-size: 0.95rem;">実際の診断や治療は獣医師による診察が必要です。<br>気になる症状がある場合は早めに動物病院へご相談ください。</p>
-</div>
+                <div class="landing-section"
+                    style="background-color: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 30px;">
+                    <p class="instruction" style="margin-bottom: 10px; color: var(--text-main); font-size: 0.95rem;">
+                        このページは、動物病院での診察時に症状を整理して伝えやすくすることを目的として作成されています。</p>
+                    <p class="instruction" style="margin-bottom: 0; color: var(--text-main); font-size: 0.95rem;">
+                        実際の診断や治療は獣医師による診察が必要です。<br>気になる症状がある場合は早めに動物病院へご相談ください。</p>
+                </div>
 
                 <h2 class="h2-title">よくあるご質問（FAQ）</h2>
                 <div class="faq-item">
                     <div class="faq-q"><span>Q.</span><span>すぐ病院に行くべき目安は？</span></div>
-                    <div class="faq-a"><span>A.</span><span>血便、激しい水様便、嘔吐を伴う、ぐったりしている、脱水が疑われる場合は早めに受診してください。子猫や持病がある場合も相談が安全です。</span></div>
+                    <div class="faq-a">
+                        <span>A.</span><span>血便、激しい水様便、嘔吐を伴う、ぐったりしている、脱水が疑われる場合は早めに受診してください。子猫や持病がある場合も相談が安全です。</span>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-q"><span>Q.</span><span>受診前に何を整理しておくと良い？</span></div>
-                    <div class="faq-a"><span>A.</span><span>便の状態（色・形・粘液・血）、回数、食事変更、誤食、元気食欲、水分摂取をまとめると診察がスムーズです。</span></div>
+                    <div class="faq-a"><span>A.</span><span>便の状態（色・形・粘液・血）、回数、食事変更、誤食、元気食欲、水分摂取をまとめると診察がスムーズです。</span>
+                    </div>
                 </div>
                 <div class="faq-item">
                     <div class="faq-q"><span>Q.</span><span>このツールは診断をしますか？</span></div>
@@ -136,18 +227,20 @@
                     <h2 class="cta-title">症状を整理するツール</h2>
                     <p class="cta-desc">以下のツールで症状を整理した受診用レポートを作成できます。</p>
                     <a href="index.html?mc=%E4%B8%8B%E7%97%A2" style="text-decoration: none;">
-                        <button class="btn-primary" style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
+                        <button class="btn-primary"
+                            style="width: auto; padding: 12px 30px; display: inline-block;">受診用レポートを作る</button>
                     </a>
                 </div>
 
                 <section class="author-box">
-                  <h2>作成者</h2>
-                  <p><strong>作成：</strong>獣医師</p>
-                  <p>本ツールは症状整理の補助を目的としており、診断や緊急度判定を行いません。気になる症状がある場合は動物病院へご相談ください。</p>
+                    <h2>作成者</h2>
+                    <p><strong>作成：</strong>獣医師</p>
+                    <p>本ツールは症状整理の補助を目的としており、診断や緊急度判定を行いません。気になる症状がある場合は動物病院へご相談ください。</p>
                 </section>
 
             </div>
         </div>
     </div>
 </body>
+
 </html>
