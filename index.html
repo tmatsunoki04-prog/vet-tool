@@ -192,6 +192,16 @@
         <main class="card-deck" id="card-deck">
             <div id="start"></div>
 
+            <div class="landing-section" style="margin-bottom: 30px; padding: 20px; background: #fff; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                <h2 style="font-size: 1.15rem; color: var(--primary-color); margin-bottom: 12px; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">ペット症状整理ツールとは何か</h2>
+                <p style="color: var(--text-main); font-size: 0.95rem; line-height: 1.6; margin-bottom: 10px;">
+                    動物病院を受診する前に、愛犬愛猫の気になる症状をスムーズに整理するための飼い主様向けサポートツールです。
+                </p>
+                <p style="color: var(--text-main); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">
+                    「いつから」「どんな症状が」「元気や食欲はどうなのか」など、獣医師が診察時に知りたい重要なポイントを、このツールを使えば質問に答えていくだけで簡単にまとめることができます。飼い主様が事前に状況を整理しておくことで、動物病院での診察時のコミュニケーションを円滑にし、的確な診断への第一歩を後押しする目的で作られています。
+                </p>
+            </div>
+
             <!-- Card 1: 主訴 (First step: Anxiety focus, Multi-select) -->
             <section class="card active-card" id="card-1" data-field="mainComplaint">
                 <h2 class="question">Q1. 気になる症状は？</h2>
@@ -401,8 +411,13 @@
         </div>
 
         <!-- Footer -->
-        <footer class="site-footer">
-            <a href="privacy.html">プライバシーポリシー</a>
+                <footer class="site-footer">
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
         </footer>
 
     </div>

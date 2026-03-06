@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap:
+https://tmatsunoki04-prog.github.io/vet-tool/sitemap.xml
