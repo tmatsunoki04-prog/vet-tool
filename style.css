@@ -875,3 +875,8 @@ textarea:focus {
 }
 .symptom-image { margin: 16px 0; text-align: center; }
 .symptom-image img { max-width: 520px; width: 100%; height: auto; display: block; margin: 0 auto; }
+
+.symptom-tool-box{
+margin-top:32px;
+margin-bottom:24px;
+}
