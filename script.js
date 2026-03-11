@@ -310,14 +310,18 @@ document.addEventListener('DOMContentLoaded', () => {
         trackEvent('result_generated', { completed_steps: totalSteps });
         
         // Save structured result silently without details/free text
-        if (_supabase && _sessionId) {
-            _supabase.from('results').insert([{
-                session_id: _sessionId,
-                pet_type: APP_STATE.petType !== '未選択' ? APP_STATE.petType : null,
-                symptoms: APP_STATE.mainComplaint.filter(s => s !== 'その他'), // exclude custom input
-                symptom_start: APP_STATE.symptomStart !== '未選択' ? APP_STATE.symptomStart : null,
-                energy_appetite: APP_STATE.energyAppetite !== '未選択' ? APP_STATE.energyAppetite : null
-            }]).catch(console.error);
+        try {
+            if (_supabase && _sessionId) {
+                _supabase.from('results').insert([{
+                    session_id: _sessionId,
+                    pet_type: APP_STATE.petType !== '未選択' ? APP_STATE.petType : null,
+                    symptoms: Array.isArray(APP_STATE.mainComplaint) ? APP_STATE.mainComplaint.filter(s => s !== 'その他') : [], // exclude custom input
+                    symptom_start: APP_STATE.symptomStart !== '未選択' ? APP_STATE.symptomStart : null,
+                    energy_appetite: APP_STATE.energyAppetite !== '未選択' ? APP_STATE.energyAppetite : null
+                }]).catch(e => { console.warn(e); });
+            }
+        } catch (error) {
+            console.warn("Result analytics tracking failed silently.");
         }
 
         const reportText = `【獣医師受診用レポート】
