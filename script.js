@@ -1,5 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // --- Supabase Analytics Setup MVP ---
+    // Project URL and Anon Key are explicitly left as placeholders for the user to set.
+    const SUPABASE_URL = 'https://dfgxdlnwhxwndbyzcahf.supabase.co'; // 変更済：Project URL
+    const SUPABASE_ANON_KEY = 'sb_publishable_H9GAYPbeWvynBysEZSUARg__SYAePSl'; // 変更済：Publishable (Anon) Key
+    let _supabase = null;
+    let _sessionId = null;
+
+    if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_PROJECT_URL') {
+        _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        // Manage anonymous session ID in localStorage (persists across tabs but no PII)
+        _sessionId = localStorage.getItem('vet_session_id');
+        if (!_sessionId) {
+            _sessionId = crypto.randomUUID ? crypto.randomUUID() : 'id-' + new Date().getTime() + '-' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('vet_session_id', _sessionId);
+            
+            // Insert new session record ONLY ONCE per generated ID
+            _supabase.from('sessions').insert([{ 
+                session_id: _sessionId, 
+                user_agent: navigator.userAgent, 
+                referrer: document.referrer 
+            }]).then();
+        }
+    }
+
+    // Helper to track events safely
+    function trackEvent(eventName, eventData = {}) {
+        if (!_supabase || !_sessionId) return;
+        _supabase.from('events').insert([{ 
+            session_id: _sessionId, 
+            event_name: eventName, 
+            event_data: eventData 
+        }]).catch(console.error);
+    }
+    
+    // 1. Event: page_view
+    trackEvent('page_view', { path: window.location.pathname });
+
     // --- App State ---
     const APP_STATE = {
         petType: '未選択',
@@ -154,6 +192,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Save state for single-select
             if (dataField && !btn.classList.contains('multi-select')) {
                 APP_STATE[dataField] = value;
+                // 3. Event: select_species
+                if (dataField === 'petType') {
+                    trackEvent('select_species', { species: value });
+                }
             }
 
             // Animate Seed Feedback
@@ -171,6 +213,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Step 1: Multi-select Advancement
     document.getElementById('btn-card1-next').addEventListener('click', (e) => {
+        // 2 & 4. Event: start_diagnosis AND select_symptom_category
+        trackEvent('start_diagnosis');
+        trackEvent('select_symptom_category', { symptoms: APP_STATE.mainComplaint.filter(s => s !== 'その他') });
         if (APP_STATE.mainComplaint.length === 0) {
             APP_STATE.mainComplaint = ['特になし（または未選択）'];
         }
@@ -253,6 +298,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const outputReport = document.getElementById('output-report');
 
     generateBtn.addEventListener('click', () => {
+        // 5. Event: result_generated
+        trackEvent('result_generated', { completed_steps: totalSteps });
+        
+        // Save structured result silently without details/free text
+        if (_supabase && _sessionId) {
+            _supabase.from('results').insert([{
+                session_id: _sessionId,
+                pet_type: APP_STATE.petType !== '未選択' ? APP_STATE.petType : null,
+                symptoms: APP_STATE.mainComplaint.filter(s => s !== 'その他'), // exclude custom input
+                symptom_start: APP_STATE.symptomStart !== '未選択' ? APP_STATE.symptomStart : null,
+                energy_appetite: APP_STATE.energyAppetite !== '未選択' ? APP_STATE.energyAppetite : null
+            }]).catch(console.error);
+        }
+
         const reportText = `【獣医師受診用レポート】
 
 ■ 1. ペットの基本情報
@@ -285,6 +344,8 @@ ${APP_STATE.details}
 
     // --- Final Actions ---
     document.getElementById('copy-btn').addEventListener('click', async () => {
+        // 6. Event: copy_result
+        trackEvent('copy_result');
         try {
             await navigator.clipboard.writeText(outputReport.value);
             showToast('クリップボードにコピーしました');
