@@ -426,6 +426,7 @@ ${APP_STATE.details}
     });
 
     // --- URL Preset Initialization ---
+    // (Supabase analytics tracking events successfully integrated)
     function applyMainComplaintPresetFromUrl() {
         const params = new URLSearchParams(window.location.search);
         const raw = params.get("mc");
