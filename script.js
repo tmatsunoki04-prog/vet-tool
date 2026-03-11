@@ -7,32 +7,40 @@ document.addEventListener('DOMContentLoaded', () => {
     let _supabase = null;
     let _sessionId = null;
 
-    if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_PROJECT_URL') {
-        _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        
-        // Manage anonymous session ID in localStorage (persists across tabs but no PII)
-        _sessionId = localStorage.getItem('vet_session_id');
-        if (!_sessionId) {
-            _sessionId = crypto.randomUUID ? crypto.randomUUID() : 'id-' + new Date().getTime() + '-' + Math.random().toString(36).substr(2, 9);
-            localStorage.setItem('vet_session_id', _sessionId);
+    try {
+        if (typeof supabase !== 'undefined' && SUPABASE_URL !== 'YOUR_SUPABASE_PROJECT_URL') {
+            _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             
-            // Insert new session record ONLY ONCE per generated ID
-            _supabase.from('sessions').insert([{ 
-                session_id: _sessionId, 
-                user_agent: navigator.userAgent, 
-                referrer: document.referrer 
-            }]).then();
+            // Manage anonymous session ID in localStorage (persists across tabs but no PII)
+            _sessionId = localStorage.getItem('vet_session_id');
+            if (!_sessionId) {
+                _sessionId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : 'id-' + new Date().getTime() + '-' + Math.random().toString(36).substr(2, 9);
+                localStorage.setItem('vet_session_id', _sessionId);
+                
+                // Insert new session record ONLY ONCE per generated ID
+                _supabase.from('sessions').insert([{ 
+                    session_id: _sessionId, 
+                    user_agent: navigator.userAgent, 
+                    referrer: document.referrer 
+                }]).then();
+            }
         }
+    } catch (error) {
+        console.warn("Analytics tracking is disabled due to environment restrictions.");
     }
 
     // Helper to track events safely
     function trackEvent(eventName, eventData = {}) {
-        if (!_supabase || !_sessionId) return;
-        _supabase.from('events').insert([{ 
-            session_id: _sessionId, 
-            event_name: eventName, 
-            event_data: eventData 
-        }]).catch(console.error);
+        try {
+            if (!_supabase || !_sessionId) return;
+            _supabase.from('events').insert([{ 
+                session_id: _sessionId, 
+                event_name: eventName, 
+                event_data: eventData 
+            }]).catch(e => { /* ignore insert errors */ });
+        } catch (error) {
+            // Fallback: prevent crash if _supabase object is somehow corrupted
+        }
     }
     
     // 1. Event: page_view
